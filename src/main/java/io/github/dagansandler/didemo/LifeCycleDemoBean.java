@@ -32,12 +32,12 @@ public class LifeCycleDemoBean
   }
 
   @Override
-  public void destroy() throws Exception {
+  public void destroy() {
     System.out.println("## The LifeCycle bean has been terminated!");
   }
 
   @Override
-  public void afterPropertiesSet() throws Exception {
+  public void afterPropertiesSet() {
     System.out.println("## The LifeCycle bean has its properties set!");
   }
 
