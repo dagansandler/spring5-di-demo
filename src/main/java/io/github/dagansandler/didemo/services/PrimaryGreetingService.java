@@ -1,18 +1,18 @@
-package io.github.dagansandler.didemo.controllers;
+package io.github.dagansandler.didemo.services;
 
-import io.github.dagansandler.didemo.services.GreetingService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile({"en", "default"})
 @Primary
+@Profile({"en", "default"})
 public class PrimaryGreetingService implements GreetingService {
+
+    private GreetingRepository greetingRepository;
 
     @Override
     public String sayGreeting() {
-        return "Hello - Primary Greeting Service";
+        return greetingRepository.getEnglishGreeting();
     }
-
 }
