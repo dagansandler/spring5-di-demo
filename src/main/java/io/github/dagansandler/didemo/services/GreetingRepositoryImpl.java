@@ -1,8 +1,8 @@
 package io.github.dagansandler.didemo.services;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 public class GreetingRepositoryImpl implements GreetingRepository {
 
     @Override
