@@ -1,0 +1,24 @@
+package io.github.dagansandler.didemo.controllers;
+
+import io.github.dagansandler.didemo.services.GreetingServiceImpl;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class SetterInjectedControllerTest {
+
+    private SetterInjectedController setterInjectedController;
+
+    @Before
+    public void setUp() {
+        this.setterInjectedController = new SetterInjectedController();
+        this.setterInjectedController.setGreetingService(new GreetingServiceImpl());
+    }
+
+    @Test
+    public void testGreeting() {
+        assertEquals(GreetingServiceImpl.HELLO_DAGAN, setterInjectedController.sayHello());
+    }
+
+}
