@@ -1,4 +1,4 @@
-package io.github.dagansandler.didemo.services;
+package io.github.dagansandler.didemo.repositories;
 
 import org.springframework.stereotype.Component;
 

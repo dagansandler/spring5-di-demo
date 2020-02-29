@@ -1,23 +1,23 @@
 package io.github.dagansandler.didemo.controllers;
 
-import io.github.dagansandler.didemo.services.GreetingServiceImpl;
-import org.junit.Before;
-import org.junit.Test;
+import io.github.dagansandler.didemo.services.ConstructorInjectedGreetingService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ConstructorInjectedControllerTest {
 
-    private ConstructorInjectedController constructorInjectedController;
+    private ConstructorInjectedController controller;
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        this.constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
+        this.controller = new ConstructorInjectedController(new ConstructorInjectedGreetingService());
     }
 
     @Test
     public void testGreeting() {
-        assertEquals(GreetingServiceImpl.HELLO_DAGAN, constructorInjectedController.sayHello());
+        assertEquals(ConstructorInjectedGreetingService.HELLO_WORLD, controller.getGreeting());
     }
 
 }

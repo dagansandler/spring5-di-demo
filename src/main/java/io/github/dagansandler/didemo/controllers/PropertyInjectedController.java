@@ -1,19 +1,18 @@
 package io.github.dagansandler.didemo.controllers;
 
 import io.github.dagansandler.didemo.services.GreetingService;
-import io.github.dagansandler.didemo.services.GreetingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class PropertyInjectedController {
+public class PropertyInjectedController implements GreetingController {
 
     @Autowired
-    @Qualifier("greetingServiceImpl")
+    @Qualifier("propertyInjectedGreetingService")
     public GreetingService greetingService;
 
-    public String sayHello() {
+    public String getGreeting() {
         return greetingService.sayGreeting();
     }
 
